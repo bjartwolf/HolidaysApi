@@ -3,7 +3,7 @@
  var Global=this,Runtime=this.IntelliFactory.Runtime,Html,Client,Operators,List,Attr,Tags,T,Concurrency,Remoting,AjaxRemotingProvider,EventsPervasives;
  Runtime.Define(Global,{
   HolidaysApi:{
-   Server:{
+   Serverstuff:{
     Client:{
      Main:function()
      {

@@ -1,4 +1,4 @@
-namespace HolidaysApi.Server
+namespace HolidaysApi.Serverstuff
 
 open WebSharper
 open WebSharper.JavaScript
