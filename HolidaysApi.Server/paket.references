@@ -1,5 +1,4 @@
 IntelliFactory.Xml
-Microsoft.Owin
 Microsoft.Owin.Diagnostics
 Microsoft.Owin.FileSystems
 Microsoft.Owin.Host.HttpListener
@@ -7,6 +6,5 @@ Microsoft.Owin.Hosting
 Microsoft.Owin.StaticFiles
 Mono.Cecil
 Owin
-WebSharper
 WebSharper.Html
 WebSharper.Owin
