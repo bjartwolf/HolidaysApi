@@ -88,6 +88,7 @@ module HolidaysApiServer =
     [<EntryPoint>]
     let Main args = 
             let port = args.[0]
-            use server = WebApp.Start<Startup>("http://localhost:" + port)
+            let url = "http://localhost:" + port
+            use server = WebApp.Start<Startup>(url)
             stdin.ReadLine() |> ignore
             0

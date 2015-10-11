@@ -40,7 +40,7 @@
     <Compile Include="Client.fs" />
     <Compile Include="Main.fs" />
     <Content Include="Main.html" />
-    <Content Include="Web.config" />
+    <Content Include="App.config" />
     <Content Include="paket.references" />
   </ItemGroup>
   <Target Name="IncludeContent" BeforeTargets="Compile">
@@ -91,7 +91,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartArguments>9000</StartArguments>
+    <StartArguments>9001</StartArguments>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
