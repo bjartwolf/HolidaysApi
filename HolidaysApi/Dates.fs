@@ -23,6 +23,6 @@ module Dates =
     let FormatDate(date:DateTime) =
         date.ToString("yyyy-MM-dd")
 
-    let FormatDateLink (date:DateTime) = String.Format("date/{0}", date.ToString("yyyy\/MM\/dd"))
+    let FormatDateLink (date:DateTime) = sprintf "date/%s" (date.ToString("yyyy\/MM\/dd"))
 
-    let FormatDateLinkWithCountry (country:String, date:DateTime) = String.Format("date/{0}/{1}", country, date.ToString("yyyy\/MM\/dd"))
+    let FormatDateLinkWithCountry (country:String, date:DateTime) =  sprintf "date/%s/%s" country (date.ToString("yyyy\/MM\/dd"))

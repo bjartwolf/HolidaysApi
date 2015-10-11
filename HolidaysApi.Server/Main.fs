@@ -7,6 +7,10 @@ open WebSharper.Sitelets
 type EndPoint =
     | [<EndPoint "GET /">] Home
 
+type ApiAction
+    | GetEasterDate
+    | GetHolidays
+
 module Templating =
     open System.Web
 
