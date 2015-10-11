@@ -1,15 +1,23 @@
 namespace HolidaysApi.Server
-
 open WebSharper.Html.Server
 open WebSharper
 open WebSharper.Sitelets
+open Aklefdal.Holidays.HttpApi.Computus 
+open Microsoft.Owin.Hosting
 
 type EndPoint =
     | [<EndPoint "GET /">] Home
 
 type ApiAction =
-    | GetEasterDate
-    | GetHolidays
+  | [<Method "GET"; CompiledName "easter">]
+    GetEasterDate
+  | [<Method "GET"; CompiledName "holidays">]
+    GetHolidays
+
+[<NamedUnionCases "result">]
+type Result<'T> =
+  | [<CompiledName "success">] Success of 'T
+  | [<CompiledName "failure">] Failure of message: string
 
 module Templating =
     open System.Web
@@ -60,7 +68,6 @@ module Site =
             | Home -> HomePage ctx
         )
 
-
 module SelfHostedServer =
 
     open global.Owin
@@ -69,18 +76,16 @@ module SelfHostedServer =
     open Microsoft.Owin.FileSystems
     open WebSharper.Owin
 
+    type Startup() =
+        member x.Configuration(app: Owin.IAppBuilder) =
+                app.UseStaticFiles(
+                            StaticFileOptions(
+                                FileSystem = PhysicalFileSystem(".."))) |> ignore
+                app.UseSitelet("..", Site.Main) |> ignore
+ 
+
     [<EntryPoint>]
-    let Main = function
-        | [| rootDirectory; url |] ->
-            use server = WebApp.Start(url, fun appB ->
-                appB.UseStaticFiles(
-                        StaticFileOptions(
-                            FileSystem = PhysicalFileSystem(rootDirectory)))
-                    .UseSitelet(rootDirectory, Site.Main)
-                |> ignore)
-            stdout.WriteLine("Serving {0}", url)
+    let Main args = 
+            use server = WebApp.Start<Startup>("http://localhost:9000")
             stdin.ReadLine() |> ignore
             0
-        | _ ->
-            eprintfn "Usage: HolidaysApi.Server ROOT_DIRECTORY URL"
-            1
