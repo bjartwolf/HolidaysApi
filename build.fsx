@@ -2,7 +2,6 @@
 
 open Fake
 open Fake.Testing
-RestorePackages()
 
 open System.IO
 
