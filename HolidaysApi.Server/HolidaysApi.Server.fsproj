@@ -28,7 +28,7 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <Name>HolidaysApi.Server</Name>
     <RootNamespace>HolidaysApi.Server</RootNamespace>
     <AssemblyName>HolidaysApi.Server</AssemblyName>
