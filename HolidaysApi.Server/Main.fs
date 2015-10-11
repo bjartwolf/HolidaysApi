@@ -7,7 +7,7 @@ open WebSharper.Sitelets
 type EndPoint =
     | [<EndPoint "GET /">] Home
 
-type ApiAction
+type ApiAction =
     | GetEasterDate
     | GetHolidays
 
