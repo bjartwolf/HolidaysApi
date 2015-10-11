@@ -1,20 +1,17 @@
-before_build:
-  - nuget restore
 assembly_info:
   patch: false
 build_script:
   build.cmd
 test: off
 artifacts:
-  - path: build\*.*
+  - path: build
     name: easterapi 
-    type: ftp 
+    type: WebDeployPackage
 deploy:
-  - provider: ftp 
-    protocol: ftps
-    server: ftps://waws-prod-db3-001.ftp.azurewebsites.windows.net
+  - provider: WebDeploy
+    server: https://easterapi.scm.azurewebsites.net:443/msdeploy.axd?site=easterapi
     website: easterapi 
-    username: easterapi\$easterapi
+    username: $easterapi
     password:
       secure: 4F1TSxExvRZHyL6hrEyqJP4GOwB2r5iPw4aO1SZ/Hym7Ne2bln2uauooI5zs4fNmuOejRpI3VVeGAHF82VjJ4g==
     artifact: easterapi 
