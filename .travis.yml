@@ -2,7 +2,7 @@ sudo: false
 
 language: csharp
 mono:
-  - 4.0.0
+  - latest 
 
 script: 
   - ./build.sh
