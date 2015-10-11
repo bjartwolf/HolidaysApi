@@ -1,9 +1,8 @@
 ﻿module HolidayTests
 
-open NUnit.Framework
+open FsCheck.Xunit 
 open FsCheck
 open System 
-open FsCheck.NUnit
 open Aklefdal.Holidays.HttpApi.Holidays
 
 [<Property>]

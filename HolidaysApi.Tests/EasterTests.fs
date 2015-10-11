@@ -1,8 +1,7 @@
 ﻿module HolidaysApi.Tests
 
-open NUnit.Framework
 open FsCheck
-open FsCheck.NUnit
+open FsCheck.Xunit
 open System 
 open Aklefdal.Holidays.HttpApi.Computus
 
