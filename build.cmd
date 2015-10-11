@@ -1,6 +1,14 @@
 @echo off
 cls
-if not exist "tools\FAKE\tools\Fake.exe" (
-    ".nuget\nuget.exe" "install" "FAKE" "-OutputDirectory" "tools" "-ExcludeVersion"
+
+.paket\paket.bootstrapper.exe
+if errorlevel 1 (
+  exit /b %errorlevel%
 )
-"tools\FAKE\tools\Fake.exe" "build.fsx"
+
+.paket\paket.exe restore
+if errorlevel 1 (
+  exit /b %errorlevel%
+)
+
+packages\FAKE\tools\FAKE.exe build.fsx %*

@@ -1,0 +1,18 @@
+source https://www.nuget.org/api/v2/
+
+nuget FAKE 
+nuget FsCheck.Xunit 2.1.0 framework: >= net45
+nuget FSharp.Core 3.1.2.5 framework: >= net45
+nuget IntelliFactory.Xml 0.6.63.95 framework: >= net45
+nuget Microsoft.Owin 3.0.1 framework: >= net45
+nuget Microsoft.Owin.Diagnostics 3.0.1 framework: >= net45
+nuget Microsoft.Owin.FileSystems 3.0.1 framework: >= net45
+nuget Microsoft.Owin.Host.HttpListener 3.0.1 framework: >= net45
+nuget Microsoft.Owin.Hosting 3.0.1 framework: >= net45
+nuget Microsoft.Owin.StaticFiles 3.0.1 framework: >= net45
+nuget Mono.Cecil 0.9.6.1 framework: >= net45
+nuget Owin 1.0 framework: >= net45
+nuget WebSharper 3.5.3.203 framework: >= net45
+nuget WebSharper.Html 3.5.4.5 framework: >= net45
+nuget WebSharper.Owin 3.5.1.107 framework: >= net45
+nuget xunit.runner.visualstudio 2.1.0 framework: >= net45
