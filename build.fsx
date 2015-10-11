@@ -9,7 +9,7 @@ open System.IO
 let buildDir  = "./build/"
 let testDir   = "./test/"
 
-let appReferences  = !! "HolidaysApi.WebHost\*.fsproj"
+let appReferences  = !! "HolidayApi\*.fsproj"
 
 let testReferences = !! "HolidaysApi.Tests\*.fsproj"
 
@@ -28,7 +28,7 @@ Target "BuildTest" (fun _ ->
 )
 
 Target "XUnitTest" (fun _ ->  
-    !! (testDir + "/HolidaysApi.Tests.dll")
+    !! (testDir + "/*Tests.dll")
         |> xUnit2 (fun p -> p))
 
 "Clean"
