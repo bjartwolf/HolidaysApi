@@ -6,7 +6,6 @@ open WebSharper.Sitelets
 
 type EndPoint =
     | [<EndPoint "GET /">] Home
-    | [<EndPoint "GET /about">] About
 
 module Templating =
     open System.Web
@@ -32,7 +31,6 @@ module Templating =
              ]
         [
             LI ["Home" => EndPoint.Home]
-            LI ["About" => EndPoint.About]
         ]
 
     let Main ctx endpoint title body : Async<Content<EndPoint>> =
@@ -51,18 +49,11 @@ module Site =
             Div [ClientSide <@ Client.Main() @>]
         ]
 
-    let AboutPage ctx =
-        Templating.Main ctx EndPoint.About "About" [
-            H1 [Text "About"]
-            P [Text "This is a template self-hosted WebSharper client-server application."]
-        ]
-
     [<Website>]
     let Main =
         Application.MultiPage (fun ctx action ->
             match action with
             | Home -> HomePage ctx
-            | About -> AboutPage ctx
         )
 
 
