@@ -1,5 +1,3 @@
-before_build:
-  - nuget restore
 assembly_info:
   patch: false
 build_script:
@@ -7,15 +5,15 @@ build_script:
 test: off
 artifacts:
   - path: build
-    name: easterAzure
+    name: easterapi 
     type: WebDeployPackage
 deploy:
   - provider: WebDeploy
-    server: https://alfeaster.scm.azurewebsites.net:443/msdeploy.axd?site=alfeaster
-    website: alfeaster
-    username: $alfeaster
+    server: https://easterapi.scm.azurewebsites.net:443/msdeploy.axd?site=easterapi
+    website: easterapi 
+    username: $easterapi
     password:
-      secure: t+OiT6XjKY0o2brHWnRTPPIduE/rWPOv2/HzgONgTKjEY5CzTP8259Sp5f9N/0AT8R1D3rDT30K+/ywK/QYZRw==
-    artifact: easterAzure
+      secure: 4F1TSxExvRZHyL6hrEyqJP4GOwB2r5iPw4aO1SZ/Hym7Ne2bln2uauooI5zs4fNmuOejRpI3VVeGAHF82VjJ4g==
+    artifact: easterapi 
     on:
-      branch: fake
+      branch: websharper 

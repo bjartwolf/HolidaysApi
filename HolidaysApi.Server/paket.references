@@ -1,0 +1,8 @@
+Microsoft.Owin.Diagnostics
+Microsoft.Owin.Host.HttpListener
+Microsoft.Owin.Hosting
+Microsoft.Owin.Hosting.SystemWeb
+Microsoft.Owin.StaticFiles
+Mono.Cecil
+WebSharper.Html
+WebSharper.Owin

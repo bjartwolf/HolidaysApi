@@ -1,15 +1,14 @@
-#r "tools/FAKE/tools/FakeLib.dll"
+#r @"packages/FAKE/tools/FakeLib.dll"
 
 open Fake
 open Fake.Testing
-RestorePackages()
 
 open System.IO
 
 let buildDir  = "./build/"
 let testDir   = "./test/"
 
-let appReferences  = !! "HolidayApi\*.fsproj"
+let appReferences  = !! "HolidaysApi.Server\*.fsproj"
 
 let testReferences = !! "HolidaysApi.Tests\*.fsproj"
 
