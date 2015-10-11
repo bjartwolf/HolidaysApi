@@ -45,7 +45,6 @@
     <Compile Include="Dates.fs" />
     <Compile Include="Holidays.fs" />
     <Compile Include="Workdays.fs" />
-    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
