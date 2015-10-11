@@ -40,7 +40,7 @@
     <Compile Include="Client.fs" />
     <Compile Include="Main.fs" />
     <Content Include="Main.html" />
-    <Content Include="App.config" />
+    <Content Include="Web.config" />
     <Content Include="paket.references" />
   </ItemGroup>
   <Target Name="IncludeContent" BeforeTargets="Compile">
