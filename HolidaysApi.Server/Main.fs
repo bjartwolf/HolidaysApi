@@ -1,4 +1,4 @@
-namespace HolidaysApi.Server
+namespace HolidaysApi.Serverstuff
 open WebSharper.Html.Server
 open WebSharper
 open WebSharper.Sitelets
@@ -68,12 +68,13 @@ module Site =
             | Home -> HomePage ctx
         )
 
-module SelfHostedServer =
-
+namespace HolidaysApi.Server 
     open global.Owin
     open Microsoft.Owin.Hosting
+    open Microsoft.Owin.Host.SystemWeb
     open Microsoft.Owin.StaticFiles
     open Microsoft.Owin.FileSystems
+    open HolidaysApi.Serverstuff
     open WebSharper.Owin
 
     type Startup() =
@@ -84,8 +85,8 @@ module SelfHostedServer =
                 app.UseSitelet("..", Site.Main) |> ignore
  
 
-    [<EntryPoint>]
-    let Main args = 
-            use server = WebApp.Start<Startup>("http://localhost:9000")
-            stdin.ReadLine() |> ignore
-            0
+//    [<EntryPoint>]
+//    let Main args = 
+//            use server = WebApp.Start<Startup>("http://localhost:9000")
+//            stdin.ReadLine() |> ignore
+//            0
