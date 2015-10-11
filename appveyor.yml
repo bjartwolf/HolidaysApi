@@ -8,12 +8,13 @@ test: off
 artifacts:
   - path: build\*.*
     name: easterapi 
-    type: WebDeployPackage
+    type: ftp 
 deploy:
-  - provider: WebDeploy
-    server: https://easterapi.scm.azurewebsites.net
+  - provider: ftp 
+    protocol: ftps
+    server: ftps://waws-prod-db3-001.ftp.azurewebsites.windows.net
     website: easterapi 
-    username: $easterapi
+    username: easterapi\$easterapi
     password:
       secure: 4F1TSxExvRZHyL6hrEyqJP4GOwB2r5iPw4aO1SZ/Hym7Ne2bln2uauooI5zs4fNmuOejRpI3VVeGAHF82VjJ4g==
     artifact: easterapi 
