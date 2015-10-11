@@ -68,7 +68,7 @@ module Site =
             | Home -> HomePage ctx
         )
 
-namespace HolidaysApi.Server 
+module HolidaysApiServer =
     open global.Owin
     open Microsoft.Owin.Hosting
     open Microsoft.Owin.Host.SystemWeb
@@ -85,8 +85,9 @@ namespace HolidaysApi.Server
                 app.UseSitelet("..", Site.Main) |> ignore
  
 
-//    [<EntryPoint>]
-//    let Main args = 
-//            use server = WebApp.Start<Startup>("http://localhost:9000")
-//            stdin.ReadLine() |> ignore
-//            0
+    [<EntryPoint>]
+    let Main args = 
+            let port = args.[0]
+            use server = WebApp.Start<Startup>("http://localhost:" + port)
+            stdin.ReadLine() |> ignore
+            0
