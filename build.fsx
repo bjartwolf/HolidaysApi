@@ -8,7 +8,7 @@ open System.IO
 let buildDir  = "./build/"
 let testDir   = "./test/"
 
-let appReferences  = !! "HolidayApi.Server\*.fsproj"
+let appReferences  = !! "HolidaysApi.Server\*.fsproj"
 
 let testReferences = !! "HolidaysApi.Tests\*.fsproj"
 
