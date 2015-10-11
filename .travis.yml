@@ -1,6 +1,6 @@
 language: csharp
 
-sudo: false  # use the new container-based Travis infrastructure 
+sudo: true# use the new container-based Travis infrastructure 
 
 before_install:
   - sudo bash -c "echo deb http://badgerports.org precise main >> /etc/apt/sources.list"
