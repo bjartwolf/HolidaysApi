@@ -12,8 +12,6 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HolidaysApi", "HolidaysApi\
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HolidaysApi.Tests", "HolidaysApi.Tests\HolidaysApi.Tests.fsproj", "{52C2D53B-55CB-4753-84CE-F81365247730}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HolidaysApi.Server", "HolidaysApi.Server\HolidaysApi.Server.fsproj", "{5B3694D3-1562-4B01-80EA-18AF2AC2FE4B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,10 +26,6 @@ Global
 		{52C2D53B-55CB-4753-84CE-F81365247730}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52C2D53B-55CB-4753-84CE-F81365247730}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52C2D53B-55CB-4753-84CE-F81365247730}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B3694D3-1562-4B01-80EA-18AF2AC2FE4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B3694D3-1562-4B01-80EA-18AF2AC2FE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B3694D3-1562-4B01-80EA-18AF2AC2FE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B3694D3-1562-4B01-80EA-18AF2AC2FE4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
