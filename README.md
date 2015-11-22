@@ -5,19 +5,18 @@ HolidaysApi
 [![Build Status](https://travis-ci.org/bjartwolf/HolidaysApi.svg?branch=Freya)](https://travis-ci.org/bjartwolf/HolidaysApi)
 
 
-#Build
-./build.sh
-
-#Run
+#Build and run 
 
 ## Windows
 ```
+build.cmd
 cd build
 HolidaysApi.Server.exe
 ```
 
 ## Linux
 ```
+./build.sh
 cd build
 mono HolidaysApi.Server.exe
 ```
