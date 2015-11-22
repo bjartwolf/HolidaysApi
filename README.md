@@ -1,6 +1,11 @@
 HolidaysApi
 ===========
 
+
+
+[![Build status](https://travis-ci.org/bjartwolf/HolidaysApi.svg?branch=master)](https://travis-ci.org/bjartwolf/HolidaysApi.svg?branch=master)
+[![Build status](https://ci.appveyor.com/api/projects/status/ykoj058ddh4ts52t?svg=true)](https://ci.appveyor.com/project/BjrnEinarBjarnes/holidaysapi)
+
 A web API for getting public holidays. Implemented for norwegian (no), swedish (se) and danish (dk) holidays.
 
 `/easter/2015` - Gives you Easter Day for 2015
