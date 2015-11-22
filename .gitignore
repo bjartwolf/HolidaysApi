@@ -5,6 +5,11 @@
 *.suo
 *.user
 *.sln.docstates
+test/
+build/
+tools/
+.vs/
+.fake/
 
 # Build results
 

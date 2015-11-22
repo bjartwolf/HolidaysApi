@@ -1,0 +1,19 @@
+assembly_info:
+  patch: false
+build_script:
+  build.cmd
+test: off
+artifacts:
+  - path: build
+    name: easterapi 
+    type: WebDeployPackage
+deploy:
+  - provider: WebDeploy
+    server: https://easterapi.scm.azurewebsites.net:443/msdeploy.axd?site=easterapi
+    website: easterapi 
+    username: $easterapi
+    password:
+      secure: 4F1TSxExvRZHyL6hrEyqJP4GOwB2r5iPw4aO1SZ/Hym7Ne2bln2uauooI5zs4fNmuOejRpI3VVeGAHF82VjJ4g==
+    artifact: easterapi 
+    on:
+      branch: websharper 

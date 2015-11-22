@@ -15,14 +15,14 @@ module Dates =
         let day = date.DayOfWeek
         day = DayOfWeek.Saturday
 
-    let WeekdayAfterOrOn(weekday:DayOfWeek, firstDate:DateTime) =
+    let WeekdayAfterOrOn(weekday:DayOfWeek, firstDate:DateTime) = //TODO
         let ts = TimeSpan.FromDays(1.0)
-        [ firstDate .. Span(ts) .. firstDate.AddDays(float 6) ]
+        [ firstDate .. Span(ts) .. firstDate.AddDays(6.0) ]
         |> Seq.find (fun (date) -> date.DayOfWeek = weekday)
 
     let FormatDate(date:DateTime) =
         date.ToString("yyyy-MM-dd")
 
-    let FormatDateLink (date:DateTime) = String.Format("date/{0}", date.ToString("yyyy\/MM\/dd"))
+    let FormatDateLink (date:DateTime) = sprintf "date/%s" (date.ToString("yyyy\/MM\/dd"))
 
-    let FormatDateLinkWithCountry (country, date:DateTime) = String.Format("date/{0}/{1}", country, date.ToString("yyyy\/MM\/dd"))
+    let FormatDateLinkWithCountry (country:String, date:DateTime) =  sprintf "date/%s/%s" country (date.ToString("yyyy\/MM\/dd"))
