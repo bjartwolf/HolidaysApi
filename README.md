@@ -11,12 +11,16 @@ HolidaysApi
 #Run
 
 ## Windows
+```
 cd build
 HolidaysApi.Server.exe
+```
 
 ## Linux
+```
 cd build
 mono HolidaysApi.Server.exe
+```
 
 ## Check the api out
 It's just not half-implemented yet because I am just learning Freya
