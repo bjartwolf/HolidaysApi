@@ -30,9 +30,15 @@ Target "XUnitTest" (fun _ ->
     !! (testDir + "/*Tests.dll")
         |> xUnit2 (fun p -> p))
 
+Target "Docker" (fun _ ->  
+        let errorcode = Shell.Exec("docker", "build .")
+        trace (sprintf "Docker image %i" errorcode)
+)
+
 "Clean"
   ==> "BuildApp"
   ==> "BuildTest"
   ==> "XUnitTest"
+  ==> "Docker"
 
 RunTargetOrDefault "XUnitTest"
