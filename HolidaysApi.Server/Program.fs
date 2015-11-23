@@ -14,11 +14,16 @@ let methods = freya { return [ GET ] }
 let available = freya { return true }
 
 let easter _ = freya {
+    let! yearRaw = Freya.Lens.getPartial (Route.Atom_ "year")
+    let couldParse, year = 
+        match yearRaw with 
+            | Some year -> Int32.TryParse year
+            | None -> false, 2015
     return { Description = { Charset = Some Charset.Utf8
                                        Encodings = None
                                        MediaType = Some MediaType.Text
                                        Languages = None }
-             Data = Text.Encoding.UTF8.GetBytes(sprintf "%A" (Seq.toList (Seq.take 5(HolidaysNO 2015)))) } }
+             Data = Text.Encoding.UTF8.GetBytes(sprintf "%A" (Seq.toList (Seq.take 5(HolidaysNO year)))) } }
 
 let holidays _ = freya {
     return { Description = { Charset = Some Charset.Utf8
