@@ -49,21 +49,15 @@ let holidays _ = freya {
 let routeEaster = UriTemplate.Parse "/easter/{year}"
 let routeHolidays = UriTemplate.Parse "/holidays/{country}/{year}"
 
-let handlerEaster = freyaMachine { using http
-                                   mediaTypesSupported mediaTypes
-                                   methodsSupported methods
-                                   serviceAvailable available
-                                   handleOk easter } |> FreyaMachine.toPipeline
-
-let holidaysHandler = freyaMachine { using http
-                                     mediaTypesSupported mediaTypes
-                                     methodsSupported methods
-                                     serviceAvailable available
-                                     handleOk holidays } |> FreyaMachine.toPipeline
+let handler vacation = freyaMachine { using http
+                                      mediaTypesSupported mediaTypes
+                                      methodsSupported methods
+                                      serviceAvailable available
+                                      handleOk vacation } |> FreyaMachine.toPipeline
 
 let routes =
-    freyaRouter { route (Methods [ GET ]) routeEaster handlerEaster
-                  route (Methods [ GET ]) routeHolidays holidaysHandler } |> FreyaRouter.toPipeline
+    freyaRouter { route (Methods [ GET ]) routeEaster (handler easter)
+                  route (Methods [ GET ]) routeHolidays (handler holidays) } |> FreyaRouter.toPipeline
 
 type EasterServer() =
     member __.Configuration () =
