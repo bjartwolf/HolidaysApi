@@ -1,13 +1,16 @@
 ﻿open Microsoft.Owin.Hosting
 open Arachne.Http
 open Freya.Core
-open System 
+open System
 open Freya.Machine
 open Freya.Machine.Router
-open Arachne.Uri.Template 
+open Arachne.Uri.Template
 open Freya.Router
 open Freya.Machine.Extensions.Http
 open Aklefdal.Holidays.HttpApi.Holidays
+open Aklefdal.Holidays.HttpApi.Computus
+open Aklefdal.Holidays.HttpApi
+open Aklefdal.Holidays.HttpApi.CountryCode
 
 let mediaTypes = freya { return [ MediaType.Text ] }
 let methods = freya { return [ GET ] }
@@ -23,14 +26,25 @@ let easter _ = freya {
                                        Encodings = None
                                        MediaType = Some MediaType.Text
                                        Languages = None }
-             Data = Text.Encoding.UTF8.GetBytes(sprintf "%A" (Seq.toList (Seq.take 5(HolidaysNO year)))) } }
+             Data = Text.Encoding.UTF8.GetBytes(sprintf "%A"  (EasterDay year)) } }
 
 let holidays _ = freya {
+    let! yearRaw = Freya.Lens.getPartial (Route.Atom_ "year")
+    let couldParse, year =
+        match yearRaw with
+            | Some year -> Int32.TryParse year
+            | None -> false, 2015
+    let! countryRaw = Freya.Lens.getPartial (Route.Atom_ "country")
+    let country = match countryRaw with 
+      | Some c -> match (CountryFromCode c) with
+                      | Some c -> c
+                      | None -> DefaultCountry
+      | None -> DefaultCountry
     return { Description = { Charset = Some Charset.Utf8
                                        Encodings = None
                                        MediaType = Some MediaType.Text
                                        Languages = None }
-             Data = Text.Encoding.UTF8.GetBytes(sprintf "%A" (Seq.toList (Seq.take 3(HolidaysNO 2013)))) } }
+             Data = Text.Encoding.UTF8.GetBytes(sprintf "%A" (Seq.toList (ForYear country year)))} }
 
 let routeEaster = UriTemplate.Parse "/easter/{year}"
 let routeHolidays = UriTemplate.Parse "/holidays/{country}/{year}"
