@@ -35,7 +35,7 @@ let holidays _ = freya {
             | Some year -> Int32.TryParse year
             | None -> false, 2015
     let! countryRaw = Freya.Lens.getPartial (Route.Atom_ "country")
-    let country = match countryRaw with 
+    let country = match countryRaw with
       | Some c -> match (CountryFromCode c) with
                       | Some c -> c
                       | None -> DefaultCountry
