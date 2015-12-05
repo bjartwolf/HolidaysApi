@@ -2,6 +2,7 @@
 open Arachne.Http
 open Freya.Core
 open System
+open System.Net
 open Freya.Machine
 open Freya.Machine.Router
 open Arachne.Uri.Template
@@ -65,6 +66,8 @@ type EasterServer() =
 
 [<EntryPoint>]
 let main [| port |] =
-    let _ = WebApp.Start<EasterServer> (sprintf "http://*:%s" port)
+    let ip = IPAddress.Loopback.ToString()
+    printf "ip %s %s" ip port
+    let _ = WebApp.Start<EasterServer> (sprintf "http://%s:%s" ip port)
     let _ = System.Console.ReadLine ()
     0
