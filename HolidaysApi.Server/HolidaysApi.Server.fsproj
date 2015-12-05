@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>f1809235-aaeb-4b0e-9e56-a2984c8d496a</ProjectGuid>
+    <ProjectGuid>{F1809235-AAEB-4B0E-9E56-A2984C8D496A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>HolidaysApi.Server</RootNamespace>
     <AssemblyName>HolidaysApi.Server</AssemblyName>
@@ -40,23 +39,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="FSharp.Core">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
+    <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HolidaysApi\HolidaysApi.fsproj">
       <Name>HolidaysApi</Name>
-      <Project>{0aa038b3-7225-4ad8-9c3a-95b16ea01d44}</Project>
-      <Private>True</Private>
+      <Project>{0AA038B3-7225-4AD8-9C3A-95B16EA01D44}</Project>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
