@@ -64,7 +64,7 @@ type EasterServer() =
         OwinAppFunc.ofFreya (routes)
 
 [<EntryPoint>]
-let main _ =
-    let _ = WebApp.Start<EasterServer> ("http://localhost:7000")
+let main [| port |] =
+    let _ = WebApp.Start<EasterServer> (sprintf "http://*:%s" port)
     let _ = System.Console.ReadLine ()
     0
