@@ -11,14 +11,14 @@ HolidaysApi
 ```
 build.cmd
 cd build
-HolidaysApi.Server.exe
+HolidaysApi.Server.exe 8000
 ```
 
 ## Linux
 ```
 ./build.sh
 cd build
-mono HolidaysApi.Server.exe
+mono HolidaysApi.Server.exe 8000
 ```
 
 ## Check the api out
