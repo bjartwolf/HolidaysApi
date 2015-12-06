@@ -66,7 +66,7 @@ type EasterServer() =
 
 [<EntryPoint>]
 let main [| port |] =
-    let ip = IPAddress.Loopback.ToString()
+    let ip = "*"
     printf "ip %s %s" ip port
     let _ = WebApp.Start<EasterServer> (sprintf "http://%s:%s" ip port)
     let _ = System.Console.ReadLine ()
