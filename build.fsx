@@ -7,6 +7,7 @@ open System.IO
 
 let buildDir  = "./build/"
 let testDir   = "./test/"
+let iisDir = "./iisApp/"
 
 let appReferences  = !! "HolidaysApi.Server\*.fsproj"
 
@@ -21,6 +22,11 @@ Target "BuildApp" (fun _ ->
         |> Log "AppBuild-Output: "
 )
 
+Target "BuildIis" (fun _ ->
+    MSBuildRelease iisDir "Build" !! "HolidaysApi.IIS\*.fsproj"
+        |> Log "AppBuild-Output: "
+)
+
 Target "BuildTest" (fun _ ->
     MSBuildDebug testDir "Build" testReferences
         |> Log "TestBuild-Output: "
@@ -31,7 +37,8 @@ Target "XUnitTest" (fun _ ->
         |> xUnit2 (fun p -> p))
 
 Target "VersionHack" (fun _ ->
-    CopyFiles buildDir !!"./test/FSharp.Core.*")
+    CopyFiles buildDir !!"./test/FSharp.Core.*"
+    CopyFiles iisDir !!"./test/FSharp.Core.*")
 
 Target "Docker" (fun _ ->  
         let errorcode = Shell.Exec("docker", "build .")
@@ -40,6 +47,7 @@ Target "Docker" (fun _ ->
 
 "Clean"
   ==> "BuildApp"
+  ==> "BuildIis"
   ==> "BuildTest"
   ==> "XUnitTest"
   ==> "VersionHack"

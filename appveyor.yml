@@ -4,7 +4,7 @@ build_script:
   build.cmd
 test: off
 artifacts:
-  - path: build
+  - path: iisApp
     name: easterapi 
     type: WebDeployPackage
 deploy:
