@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
+# Visual Studio 2012
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{ACE60DC0-BA4D-4668-83AB-0D15ABB8BE5F}"
@@ -8,11 +8,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{ACE60D
 		paket.dependencies = paket.dependencies
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HolidaysApi", "HolidaysApi\HolidaysApi.fsproj", "{0AA038B3-7225-4AD8-9C3A-95B16EA01D44}"
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "HolidaysApi", "HolidaysApi\HolidaysApi.fsproj", "{0AA038B3-7225-4AD8-9C3A-95B16EA01D44}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HolidaysApi.Tests", "HolidaysApi.Tests\HolidaysApi.Tests.fsproj", "{52C2D53B-55CB-4753-84CE-F81365247730}"
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "HolidaysApi.Tests", "HolidaysApi.Tests\HolidaysApi.Tests.fsproj", "{52C2D53B-55CB-4753-84CE-F81365247730}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "HolidaysApi.Server", "HolidaysApi.Server\HolidaysApi.Server.fsproj", "{F1809235-AAEB-4B0E-9E56-A2984C8D496A}"
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "HolidaysApi.Server", "HolidaysApi.Server\HolidaysApi.Server.fsproj", "{F1809235-AAEB-4B0E-9E56-A2984C8D496A}"
+EndProject
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "HolidaysApi.OwinApp", "HolidaysApi.OwinApp\HolidaysApi.OwinApp.fsproj", "{42956BBB-0E6E-4097-B5D7-1FB50745B0CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 		{0AA038B3-7225-4AD8-9C3A-95B16EA01D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AA038B3-7225-4AD8-9C3A-95B16EA01D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AA038B3-7225-4AD8-9C3A-95B16EA01D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42956BBB-0E6E-4097-B5D7-1FB50745B0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42956BBB-0E6E-4097-B5D7-1FB50745B0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42956BBB-0E6E-4097-B5D7-1FB50745B0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42956BBB-0E6E-4097-B5D7-1FB50745B0CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{52C2D53B-55CB-4753-84CE-F81365247730}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{52C2D53B-55CB-4753-84CE-F81365247730}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52C2D53B-55CB-4753-84CE-F81365247730}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -32,6 +38,8 @@ Global
 		{F1809235-AAEB-4B0E-9E56-A2984C8D496A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1809235-AAEB-4B0E-9E56-A2984C8D496A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1809235-AAEB-4B0E-9E56-A2984C8D496A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
