@@ -10,7 +10,7 @@ artifacts:
 deploy:
   - provider: WebDeploy
     server: https://easterapi.scm.azurewebsites.net:443/msdeploy.axd?site=easterapi
-    website: easterapi
+    website: production
     remove_files: true
     username: $easterapi
     password:
