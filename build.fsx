@@ -30,6 +30,9 @@ Target "XUnitTest" (fun _ ->
     !! (testDir + "/*Tests.dll")
         |> xUnit2 (fun p -> p))
 
+Target "VersionHack" (fun _ ->
+    CopyFile "./test/FSharp.Core.dll" buildDir)
+
 Target "Docker" (fun _ ->  
         let errorcode = Shell.Exec("docker", "build .")
         trace (sprintf "Docker image %i" errorcode)
@@ -39,6 +42,7 @@ Target "Docker" (fun _ ->
   ==> "BuildApp"
   ==> "BuildTest"
   ==> "XUnitTest"
+  ==> "VersionHack"
   ==> "Docker"
 
-RunTargetOrDefault "XUnitTest"
+RunTargetOrDefault "VersionHack"
