@@ -31,7 +31,7 @@ Target "XUnitTest" (fun _ ->
         |> xUnit2 (fun p -> p))
 
 Target "VersionHack" (fun _ ->
-    CopyFile "./test/FSharp.Core.dll" buildDir)
+    CopyFiles buildDir !!"./test/FSharp.Core.*")
 
 Target "Docker" (fun _ ->  
         let errorcode = Shell.Exec("docker", "build .")
