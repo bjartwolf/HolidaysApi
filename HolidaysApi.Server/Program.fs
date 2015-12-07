@@ -15,6 +15,6 @@ let main [| port |] =
     for foo in host.AddressList do
         printf "ip %A" foo 
     printf "ip %s %s" ip port
-    let _ = WebApp.Start<HolidaysApi.App.EasterServer> (sprintf "http://%s:%s" ip port)
+    let _ = WebApp.Start<HolidaysApi.OwinApp.EasterServer> (sprintf "http://%s:%s" ip port)
     let _ = System.Console.ReadLine ()
     0

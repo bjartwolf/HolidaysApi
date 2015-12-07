@@ -1,4 +1,7 @@
 ﻿using Owin;
+using Microsoft.Owin;
+using Microsoft.Owin.Host.SystemWeb;
+using HolidaysApi.OwinApp;
 
 namespace HolidaysApi.AspNet
 {
@@ -6,7 +9,7 @@ namespace HolidaysApi.AspNet
 	{
 		public void Configuration(IAppBuilder app)
 		{
-			app.Run (easterserver ());
+			app.Run(new EasterServer());
 		}
 	}
 }

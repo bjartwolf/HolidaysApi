@@ -60,8 +60,6 @@ let routes =
     freyaRouter { route (Methods [ GET ]) routeEaster (handler easter)
                   route (Methods [ GET ]) routeHolidays (handler holidays) } |> FreyaRouter.toPipeline
 
-type public EasterServer() =
-            member __.Configuration () =
-                  OwinAppFunc.ofFreya routes
+
 
 let public easterServer =  OwinAppFunc.ofFreya routes

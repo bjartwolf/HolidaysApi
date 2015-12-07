@@ -6,7 +6,7 @@ open HolidaysApi.App
 
 type Startup() =
     member x.Configuration(app: Owin.IAppBuilder) =
-        easterServer
+        app.Use(easterServer)
 
 [<assembly: OwinStartup(typeof<Startup>)>]
 do ()
